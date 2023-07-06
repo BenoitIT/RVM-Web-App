@@ -41,7 +41,7 @@ const Menus: LinkType[] = [
     path: "/dashboard/containers",
     nestedLink: [
       {
-        title: "Huye",
+        title: "Kigali",
         path: "/dashboard/about",
       },
       {
@@ -49,11 +49,11 @@ const Menus: LinkType[] = [
         path: "/dashboard/contact",
       },
       {
-        title: "Remera",
+        title: "Nyagatare",
         path: "/dashboard/contact",
       },
       {
-        title: "Gisozi URL",
+        title: "Muhanga",
         path: "/dashboard/contact",
       },
       {
