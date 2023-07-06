@@ -15,7 +15,7 @@ const Menus: LinkType[] = [
     icon: faColumns,
     component: null,
     nestedLink: null,
-    path: "/dashboard",
+    path: "/",
   },
   {
     id: 6,
@@ -31,16 +31,7 @@ const Menus: LinkType[] = [
     icon: faClipboardList,
     component: null,
     path: "/dashboard/machines",
-    nestedLink: [
-      {
-        title: "about",
-        path: "/dashboard/about",
-      },
-      {
-        title: "contact",
-        path: "/dashboard/contact",
-      },
-    ],
+    nestedLink: null
   },
   {
     id: 2,
@@ -50,23 +41,23 @@ const Menus: LinkType[] = [
     path: "/dashboard/containers",
     nestedLink: [
       {
-        title: "about",
+        title: "Huye",
         path: "/dashboard/about",
       },
       {
-        title: "contact",
+        title: "Muhanga",
         path: "/dashboard/contact",
       },
       {
-        title: "contact",
+        title: "Remera",
         path: "/dashboard/contact",
       },
       {
-        title: "contact",
+        title: "Gisozi URL",
         path: "/dashboard/contact",
       },
       {
-        title: "about",
+        title: "Rubavu",
         path: "/dashboard/about",
       },
     ],
