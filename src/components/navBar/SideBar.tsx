@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import Menus from "../../assets/Links";
 
 const SideBar = () => {
@@ -40,7 +41,7 @@ const SideBar = () => {
                   : "font-bold"
               }`}
             >
-             <div> {menu.title}</div>
+             <Link to={menu.path} className="text-white hover:text-gray-300"><div>{menu.title}</div></Link> 
               {activeMenu === index && menu.nestedLink && (
                 <div
                   className={`absolute left-0 text-sm bg-lime-600 z-10 w-full py-[2vh] ${
