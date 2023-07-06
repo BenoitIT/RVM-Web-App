@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "../components/cards/DashboardCard";
 import {
   faClipboardList,
@@ -6,10 +6,16 @@ import {
   faMoneyBillTrendUp,
   faPlugCircleExclamation,
 } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
 import GeneralChart from "../components/chats/GeneralStatics";
 import PieChart from "../components/chats/StasticalPieChart";
 import Button from "../components/buttons/Button";
+import { SwitchHeaderByPage } from "../redux/PageHeaderReducer";
 const Dashboard = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(SwitchHeaderByPage("Dashboard Overview"));
+  }, []);
   return (
     <div className="container pr-[4vw] pl-[2vw] py-[4vh] h-screen overflow-scroll">
       <div className="grid grid-cols-4 gap-2">
@@ -48,7 +54,7 @@ const Dashboard = () => {
         </h1>
         <div className="bg-black opacity-10 w-full  absolute h-[30vh] "></div>
         <div className="absolute top-[50%] left-[35%]">
-          <Button title="Click here"/>
+          <Button title="Click here" />
         </div>
         <img
           src="/mapimage.png"

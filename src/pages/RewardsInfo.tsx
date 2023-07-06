@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import dammyRewardData from "../assets/Data";
 import GeneralRow from "../components/tables/GeneralRow";
 import SearchBox from "../components/inputs/SearchInput";
 import Paginator from "../components/pagination/Paginator";
+import { useDispatch } from "react-redux";
+import { SwitchHeaderByPage } from "../redux/PageHeaderReducer";
 interface RewardsInfoProps {}
 
 const RewardsInfo: React.FunctionComponent<RewardsInfoProps> = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(SwitchHeaderByPage("Rewards Information"));
+  }, []);
   return (
     <div className="container pr-[4vw] pl-[2vw] py-[6vh] h-screen overflow-scroll">
       <div className="flex justify-end py-[2vh]">
-          <SearchBox/>
-        </div>
+        <SearchBox />
+      </div>
       <div className="relative overflow-x-auto shadow-md sm:rounded">
         <table className="w-full text-sm text-left">
           <thead className="text-xs text-white uppercase bg-lime-800">
@@ -49,8 +55,8 @@ const RewardsInfo: React.FunctionComponent<RewardsInfoProps> = () => {
         </table>
       </div>
       <div className="flex justify-end">
-          <Paginator/>
-        </div>
+        <Paginator />
+      </div>
     </div>
   );
 };
