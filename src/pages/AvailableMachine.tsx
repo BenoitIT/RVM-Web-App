@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import dammyData from "../assets/DamyMachine";
 import TableRow from "../components/tables/MachineRow";
 import Paginator from "../components/pagination/Paginator";
+import { SwitchHeaderByPage } from "../redux/PageHeaderReducer";
 interface AvailableMachineProps {}
 
 const AvailableMachine: React.FunctionComponent<AvailableMachineProps> = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(SwitchHeaderByPage("Available Machines"));
+  }, []);
   return (
     <div className="container pr-[4vw] pl-[2vw] py-[6vh] h-screen overflow-scroll">
       <div className="relative overflow-x-auto shadow-md sm:rounded">

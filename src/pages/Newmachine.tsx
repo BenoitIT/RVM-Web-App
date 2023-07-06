@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import {
   faClipboardList,
   faPersonBooth,
@@ -8,9 +8,15 @@ import {
 import Card from "../components/cards/DashboardCard";
 import Input from "../components/inputs/inputField";
 import Button from "../components/buttons/Button";
+import { useDispatch } from "react-redux";
+import { SwitchHeaderByPage } from "../redux/PageHeaderReducer";
 interface RegisterMachineProps {}
 
 const RegisterMachine: React.FunctionComponent<RegisterMachineProps> = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(SwitchHeaderByPage("Register New Machine"));
+  }, []);
   return (
     <div className="container pr-[4vw] pl-[2vw] py-[6vh] h-screen overflow-scroll">
       <div className="grid grid-cols-4 gap-2">
