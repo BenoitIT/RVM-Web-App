@@ -5,7 +5,8 @@ import {
   faClipboardList,
   faBoxOpen,
   faCashRegister,
-  faUsers
+  faUsers,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Menus: LinkType[] = [
@@ -31,7 +32,7 @@ const Menus: LinkType[] = [
     icon: faClipboardList,
     component: null,
     path: "/dashboard/machines",
-    nestedLink: null
+    nestedLink: null,
   },
   {
     id: 2,
@@ -77,6 +78,14 @@ const Menus: LinkType[] = [
     component: null,
     nestedLink: null,
     path: "/dashboard/contributors",
+  },
+  {
+    id: 5,
+    title: "Operators",
+    icon: faUser,
+    component: null,
+    nestedLink: null,
+    path: "/dashboard/operators",
   },
 ];
 

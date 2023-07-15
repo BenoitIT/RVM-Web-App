@@ -6,6 +6,7 @@ import AvailableMachine from "../pages/AvailableMachine";
 import ContainersInfo from "../pages/containerInfo";
 import RewardsInfo from "../pages/RewardsInfo";
 import Contributors from "../pages/Contributors";
+import Operators from "../pages/Operator";
 interface AppRoutersProps {}
 
 const AppRouters: React.FunctionComponent<AppRoutersProps> = () => {
@@ -17,6 +18,7 @@ const AppRouters: React.FunctionComponent<AppRoutersProps> = () => {
         <Route path="/dashboard/containers" element={<ContainersInfo  />} />
         <Route path="/dashboard/rewards" element={<RewardsInfo  />} />
         <Route path="/dashboard/contributors" element={<Contributors   />} />
+        <Route path="/dashboard/operators" element={<Operators  />} />
       </Routes>
   );
 };
