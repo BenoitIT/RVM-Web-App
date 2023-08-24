@@ -21,7 +21,7 @@ const Operators: React.FunctionComponent<OperatorsProps> = () => {
     setModal(true);
   };
   return (
-    <div className="container pr-[4vw] pl-[2vw] py-[6vh] h-screen overflow-scroll">
+    <div className="pr-[4vw] pl-[2vw] py-[6vh] h-screen overflow-scroll">
       <div className="flex justify-between py-[2vh]">
         <button
           type="button"
@@ -44,22 +44,22 @@ const Operators: React.FunctionComponent<OperatorsProps> = () => {
         <table className="w-full text-sm text-left">
           <thead className="text-xs text-white uppercase bg-lime-800">
             <tr>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-2 py-3">
                 No
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-2 py-3">
                 First Name
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-2 py-3">
                 Last Name
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-2 py-3">
                 Telephone
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-2 py-3">
                 National ID
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-2 py-3">
                 <span className="sr-only">Edit</span>
               </th>
             </tr>

@@ -13,7 +13,7 @@ const RewardsInfo: React.FunctionComponent<RewardsInfoProps> = () => {
     dispatch(SwitchHeaderByPage("Rewards Information"));
   }, []);
   return (
-    <div className="container pr-[4vw] pl-[2vw] py-[6vh] h-screen overflow-scroll">
+    <div className="pr-[4vw] pl-[2vw] py-[6vh] h-screen overflow-scroll">
       <div className="flex justify-end py-[2vh]">
         <SearchBox />
       </div>
@@ -21,22 +21,22 @@ const RewardsInfo: React.FunctionComponent<RewardsInfoProps> = () => {
         <table className="w-full text-sm text-left">
           <thead className="text-xs text-white uppercase bg-lime-800">
             <tr>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-2 py-3">
                 No
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-2 py-3">
                 Name
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-2 py-3">
                 Recycling Contribution
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-2 py-3">
                 Reward
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-2 py-3">
                 Date
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-2 py-3">
                 <span className="sr-only">Edit</span>
               </th>
             </tr>

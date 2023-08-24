@@ -13,7 +13,7 @@ const Contributors: React.FunctionComponent<ContributorsProps> = () => {
     dispatch(SwitchHeaderByPage("Contributors"));
   }, []);
   return (
-    <div className="container pr-[4vw] pl-[2vw] py-[6vh] h-screen overflow-scroll">
+    <div className="pr-[4vw] pl-[2vw] py-[6vh] h-screen overflow-scroll">
       <div className="flex justify-end py-[2vh]">
         <SearchBox />
       </div>
@@ -21,22 +21,22 @@ const Contributors: React.FunctionComponent<ContributorsProps> = () => {
         <table className="w-full text-sm text-left">
           <thead className="text-xs text-white uppercase bg-lime-800">
             <tr>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-2 py-3">
                 No
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-2 py-3">
                 Names
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-2 py-3">
                 Location
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-2 py-3">
                 Telephone
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-2 py-3">
                 National ID
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-2 py-3">
                 <span className="sr-only">Edit</span>
               </th>
             </tr>
