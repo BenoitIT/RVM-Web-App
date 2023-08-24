@@ -1,59 +1,32 @@
 import React, { useEffect } from "react";
-import Card from "../components/cards/DashboardCard";
-import {
-  faClipboardList,
-  faPersonBooth,
-  faMoneyBillTrendUp,
-  faPlugCircleExclamation,
-} from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
 import GeneralChart from "../components/chats/GeneralStatics";
 import PieChart from "../components/chats/StasticalPieChart";
 import Button from "../components/buttons/Button";
 import { SwitchHeaderByPage } from "../redux/PageHeaderReducer";
+import DashboardCardGoup from "../components/cards/cardGroup";
 const Dashboard = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(SwitchHeaderByPage("Dashboard Overview"));
   }, []);
   return (
-    <div className="container pr-[4vw] pl-[2vw] py-[4vh] h-screen overflow-scroll">
-      <div className="grid grid-cols-4 gap-2">
-        <Card
-          icon={faClipboardList}
-          numbers="120"
-          description="machines Registered"
-        />
-        <Card
-          icon={faPersonBooth}
-          numbers="124"
-          description="operators Registered"
-        />
-        <Card
-          icon={faMoneyBillTrendUp}
-          numbers="90000"
-          description="Reward granted"
-        />
-        <Card
-          icon={faPlugCircleExclamation}
-          numbers="20"
-          description="Inactive machines"
-        />
-      </div>
-      <div className="mt-4 w-full flex">
-        <div className="w-3/4">
+    <div className="pr-[4vw] pl-[2vw] py-[4vh] h-screen overflow-scroll">
+      <DashboardCardGoup/>
+      <div className="mt-4 w-full flex desktop:flex-row md:flex-col xs:flex-col">
+        <div className="desktop:w-3/4 md:w-full xs:w-full">
           <GeneralChart />
         </div>
-        <div className="pt-[10vh]">
+        <div className="desktop:pt-[10vh] md:pt-[5vh] xs:pt-[3vh] xs:w-[80vw] md:w-[50vw] desktop:w-auto xs:ml-[8vw] md:ml-[20vw] desktop:ml-0 ">
           <PieChart />
         </div>
       </div>
       <div className="mx-auto relative">
-        <h1 className="text-2xl font-bold text-gray-600 text-center py-[1vh]">
+        <h1 className="desktop:text-2xl md:text-lg xs:text-sm font-bold text-gray-600 text-center py-[1vh]">
           Track the Reverse Vending Machine by map
         </h1>
         <div className="bg-black opacity-10 w-full  absolute h-[30vh] "></div>
-        <div className="absolute top-[50%] left-[35%]">
+        <div className="absolute top-[50%] desktop:left-[35%] md:left-[35%] xs:left-[30%]">
           <Button title="Click here" />
         </div>
         <img

@@ -6,14 +6,14 @@ const GeneralRow: React.FC<RewardsData> = ({id,name,contribution,reward,date}) =
     <tr className="bg-white border-b  border-gray-700 hover:bg-white">
       <th
         scope="row"
-        className="px-6 py-4 font-medium text-gray-700 whitespace-nowrap"
+        className="px-2 py-4 font-medium text-gray-700 text-xs"
       >
         {id}
       </th>
-      <td className="px-6 py-4">{name}</td>
-      <td className="px-6 py-4">{contribution}</td>
-      <td className="px-6 py-4">{reward}</td>
-      <td className="px-6 py-4">{date}</td>
+      <td className="px-2 py-4">{name}</td>
+      <td className="px-2 py-4">{contribution}</td>
+      <td className="px-2 py-4">{reward}</td>
+      <td className="px-2 py-4">{date}</td>
     </tr>
   );
 };

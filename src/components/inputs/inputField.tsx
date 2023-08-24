@@ -14,14 +14,14 @@ const Input: React.FC<InputProps> = ({
     <div>
       <label
         htmlFor={label}
-        className="mb-4 text-base font-medium text-gray-600"
+        className="mb-4 desktop:text-base md:text-base xs:text-sm font-medium text-gray-600"
       >
         {label}
       </label>
       <input
         type={type}
         id={label}
-        className="border bg-transparent border-lime-800 text-gray-700 placeholder-gray-400 text-sm rounded  mt-2 w-full p-3"
+        className="border bg-transparent border-lime-800 text-gray-700 placeholder-gray-400 desktop:text-sm md:text-sm xs:text-xs rounded  mt-2 w-full desktop:p-3 md:p-3 xs:p-2"
         placeholder={placeholder}
       />
     </div>
