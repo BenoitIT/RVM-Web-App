@@ -14,7 +14,7 @@ const Input: React.FC<InputProps> = ({
     <div>
       <label
         htmlFor={label}
-        className="mb-4 desktop:text-base md:text-base xs:text-sm font-medium text-gray-600"
+        className="mb-4 desktop:text-base md:text-base xs:text-xs font-medium text-gray-600"
       >
         {label}
       </label>

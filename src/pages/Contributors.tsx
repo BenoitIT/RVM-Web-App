@@ -14,29 +14,29 @@ const Contributors: React.FunctionComponent<ContributorsProps> = () => {
   }, []);
   return (
     <div className="pr-[4vw] pl-[2vw] py-[6vh] h-screen overflow-scroll">
-      <div className="flex justify-end py-[2vh]">
+      <div className="desktop:flex justify-end py-[2vh] xs:block">
         <SearchBox />
       </div>
       <div className="relative overflow-x-auto shadow-md sm:rounded">
         <table className="w-full text-sm text-left">
           <thead className="text-xs text-white uppercase bg-lime-800">
             <tr>
-              <th scope="col" className="px-2 py-3">
+              <th scope="col" className="px-2 desktop:py-3 md:py-2 xs:py-1">
                 No
               </th>
-              <th scope="col" className="px-2 py-3">
-                Names
+              <th scope="col" className="px-2 desktop:py-3 md:py-2 xs:py-1">
+                First Name
               </th>
-              <th scope="col" className="px-2 py-3">
-                Location
+              <th scope="col" className="px-2 desktop:py-3 md:py-2 xs:py-1">
+                Last Name
               </th>
-              <th scope="col" className="px-2 py-3">
+              <th scope="col" className="px-2 desktop:py-3 md:py-2 xs:py-1">
                 Telephone
               </th>
-              <th scope="col" className="px-2 py-3">
+              <th scope="col" className="px-2 desktop:py-3 md:py-2 xs:py-1">
                 National ID
               </th>
-              <th scope="col" className="px-2 py-3">
+              <th scope="col" className="px-2 desktop:py-3 md:py-2 xs:py-1">
                 <span className="sr-only">Edit</span>
               </th>
             </tr>

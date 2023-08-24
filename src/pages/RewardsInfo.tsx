@@ -14,29 +14,29 @@ const RewardsInfo: React.FunctionComponent<RewardsInfoProps> = () => {
   }, []);
   return (
     <div className="pr-[4vw] pl-[2vw] py-[6vh] h-screen overflow-scroll">
-      <div className="flex justify-end py-[2vh]">
+      <div className=" desktop:flex justify-end  py-[2vh] xs:block w-full">
         <SearchBox />
       </div>
       <div className="relative overflow-x-auto shadow-md sm:rounded">
-        <table className="w-full text-sm text-left">
+        <table className="w-full desktop:text-sm  xs:text-xs text-left">
           <thead className="text-xs text-white uppercase bg-lime-800">
             <tr>
-              <th scope="col" className="px-2 py-3">
+              <th scope="col" className="px-2 desktop:py-3 md:py-2 xs:py-1">
                 No
               </th>
-              <th scope="col" className="px-2 py-3">
+              <th scope="col" className="px-2 desktop:py-3 md:py-2 xs:py-1">
                 Name
               </th>
-              <th scope="col" className="px-2 py-3">
+              <th scope="col" className="px-2 desktop:py-3 md:py-2 xs:py-1">
                 Recycling Contribution
               </th>
-              <th scope="col" className="px-2 py-3">
+              <th scope="col" className="px-2 desktop:py-3 md:py-2 xs:py-1">
                 Reward
               </th>
-              <th scope="col" className="px-2 py-3">
+              <th scope="col" className="px-2 desktop:py-3 md:py-2 xs:py-1">
                 Date
               </th>
-              <th scope="col" className="px-2 py-3">
+              <th scope="col" className="px-2 desktop:py-3 md:py-2 xs:py-1">
                 <span className="sr-only">Edit</span>
               </th>
             </tr>
