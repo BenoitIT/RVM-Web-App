@@ -1,31 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import dammyContibutorsData from "../assets/Contributor";
 import Contributor from "../components/tables/Contributor";
 import SearchBox from "../components/inputs/SearchInput";
 import Paginator from "../components/pagination/Paginator";
-import NewOperator from "../components/forms/NewOperator";
-import { useDispatch } from "react-redux";
+import MutateOperator from "../components/forms/NewOperator";
+import { useDispatch,useSelector } from "react-redux";
 import { SwitchHeaderByPage } from "../redux/PageHeaderReducer";
+import { RootState } from "../redux/store";
+import { modalPopUpDisplay,showDataUpdateModal } from "../redux/displayModal";
 interface OperatorsProps {}
 
 const Operators: React.FunctionComponent<OperatorsProps> = () => {
-  const [modal, setModal] = useState(false);
+  const AddNewmodal= useSelector((state:RootState):Boolean=>state.showModal.showModal);
+  const updateInfomodal=useSelector((state:RootState):Boolean=>state.showModal.showUpdateModal);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(SwitchHeaderByPage("Operators"));
   }, []);
   const handleModalDisplay = () => {
-    setModal(false);
+    dispatch(modalPopUpDisplay(false));
+    dispatch(showDataUpdateModal(false));
   };
   const handleModal = () => {
-    setModal(true);
+    dispatch(modalPopUpDisplay(true));
   };
+
   return (
     <div className="pr-[4vw] pl-[2vw] py-[6vh] h-screen overflow-scroll">
       <div className=" flex desktop:flex-row justify-between py-[2vh] xs:flex-col xs:gap-3">
         <button
-          type="button"
-          className="uppercase text-white bg-lime-800 hover:bg-lime-600 font-bold rounded-lg text-sm px-[3vw] py-[0.8vh] shadow-md shadow-gray-500 md:w-[80vw] desktop:w-auto xs:w-auto"
+          className="uppercase text-white bg-lime-800 hover:bg-lime-600 font-bold rounded-lg text-sm px-[3vw] py-[0.8vh] shadow-md outline-none shadow-gray-500 md:w-[80vw] desktop:w-auto xs:w-auto"
           onClick={handleModal}
         >
           New operator
@@ -33,13 +37,11 @@ const Operators: React.FunctionComponent<OperatorsProps> = () => {
         <SearchBox />
       </div>
       <div className="relative overflow-x-auto shadow-md sm:rounded">
-        <div
-          className={
-            modal ? "bg-black opacity-50 w-full h-full absolute" : "hidden"
-          }
-        ></div>
-        <div className={modal ? "absolute left-[10vw] top-[10vh]" : "hidden"}>
-          <NewOperator onModalDisplay={handleModalDisplay} />
+        <div className={AddNewmodal? "absolute left-[10vw] top-[10vh] z-40" : "hidden"}>
+          <MutateOperator onModalDisplay={handleModalDisplay}  title="Register new RVM operator" button="register"/>
+        </div>
+        <div className={updateInfomodal? "absolute left-[10vw] top-[10vh] z-40" : "hidden"}>
+          <MutateOperator onModalDisplay={handleModalDisplay}  title="Update RVM operator Info." button="update info"/>
         </div>
         <table className="w-full dektop:text-sm xs:text-xs text-left">
           <thead className="text-xs text-white uppercase bg-lime-800">

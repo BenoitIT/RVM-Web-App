@@ -3,7 +3,7 @@ export interface contributorData{
     lastname:string,
     firstname:string,
     phone:string,
-    nationalID:string
+    nationalID:string,
 }
 const dammyContibutorsData:contributorData[] =[
     {
@@ -11,7 +11,7 @@ const dammyContibutorsData:contributorData[] =[
       firstname: 'benoit',
       lastname: 'MUGISHA',
       phone: '0784817204',
-      nationalID: '1199344463838448'
+      nationalID: '1199344463838448',
     },
     {
       id: '2',

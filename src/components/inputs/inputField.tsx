@@ -21,7 +21,7 @@ const Input: React.FC<InputProps> = ({
       <input
         type={type}
         id={label}
-        className="border bg-transparent border-lime-800 text-gray-700 placeholder-gray-400 desktop:text-sm md:text-sm xs:text-xs rounded  mt-2 w-full desktop:p-3 md:p-3 xs:p-2"
+        className="border bg-transparent border-lime-800 text-gray-700 placeholder-gray-400 desktop:text-sm md:text-sm xs:text-xs rounded  mt-2 w-full desktop:p-3 md:p-3 xs:p-2 outline-none"
         placeholder={placeholder}
       />
     </div>

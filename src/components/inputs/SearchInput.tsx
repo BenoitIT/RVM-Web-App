@@ -25,13 +25,13 @@ const SearchBox: React.FunctionComponent<SearchBoxProps> = () => {
         <input
           type="search"
           id="default-search"
-          className="block w-full desktop:p-4 md:p-3 xs:p-2 pl-10 text-sm text-gray-900 border border-lime-700 rounded-lg bg-gray-50"
+          className="block w-full desktop:p-4 md:p-3 xs:p-2 pl-10 text-sm text-gray-900 border border-lime-700 rounded-lg bg-gray-50 outline-none"
           placeholder="search by names...."
           required
         />
         <button
           type="submit"
-          className="text-white absolute right-2.5 desktop:bottom-2.5 xs:bottom-1 md:bottom-2  bg-lime-700 hover:bg-lime-800 focus:ring-4 focus:outline-none font-medium rounded-md text-sm dektop:px-8  md:px-4 xs:px-3 desktop:py-2 xs:py-1"
+          className="text-white absolute right-2.5 desktop:bottom-2.5 xs:bottom-1 md:bottom-2  bg-lime-700 hover:bg-lime-800 focus:ring-4outline-none font-medium rounded-md text-sm dektop:px-8  md:px-4 xs:px-3 desktop:py-2 xs:py-1"
         >
           Search
         </button>
