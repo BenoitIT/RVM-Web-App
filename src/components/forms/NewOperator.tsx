@@ -4,14 +4,16 @@ import Button from "../buttons/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 interface NewOperatorProps {
+  button:string;
+   title:string;
     onModalDisplay:()=>void;
 }
 
-const NewOperator: React.FC<NewOperatorProps> = ({ onModalDisplay}:NewOperatorProps) => {
+const NewOperator: React.FC<NewOperatorProps> = ({ onModalDisplay,title,button}:NewOperatorProps) => {
   return (
-    <div className="bg-white py-[5vh] px-[4vw] shadow-md shadow-gray-400">
+    <div className="bg-white py-[5vh] px-[4vw] shadow-md rounded shadow-gray-400">
       <div className="text-center text-gray-900 text-xl uppercase font-semibold pb-6 relative">
-        Register new RVM operator{" "}
+      {title}
         <span className="absolute right-2 bg-white p-2 py-0 hover:bg-red-300 hover:text-white rounded-full hover:cursor-pointer" onClick={onModalDisplay}>
           <FontAwesomeIcon icon={faXmark} />
         </span>
@@ -38,7 +40,7 @@ const NewOperator: React.FC<NewOperatorProps> = ({ onModalDisplay}:NewOperatorPr
           placeholder="Enter operaor's national ID here"
         />
         <div className="col-span-2 flex justify-center mt-4">
-          <Button title="Register" />
+          <Button title={button} />
         </div>
       </div>
     </div>

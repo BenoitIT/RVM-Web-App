@@ -1,0 +1,50 @@
+name: xanahealthPipeline
+
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches:
+      - "*"
+
+jobs:
+  securityCheck:
+    name: security Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: check for security
+        run: |
+          echo "running security check ...1"
+          sleep 3s
+          echo "running security check ...2"
+          sleep 3s
+
+  app-building:
+    name: run build
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone Repository
+        uses: actions/checkout@v2
+      - name: List Repository Contents
+        run: |
+          ls -a
+      - name: App-Build
+        run: |
+          echo "Running xanahealth web-app build..."
+          npm install
+          npm run build
+
+  deploy:
+    name: deploy the app
+    runs-on: ubuntu-latest
+    needs: [app-building]
+    steps:
+      - name: clone Repository
+        uses: actions/checkout@v2
+      - name: List Repository Contents
+        run: |
+          ls -al
+      - name: install dependencies
+        run: |
+          echo "deployment in progress..."

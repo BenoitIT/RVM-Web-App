@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Input from "../components/inputs/inputField";
 import Button from "../components/buttons/Button";
+import dammyContibutors from "../assets/Contributor";
 import { useDispatch } from "react-redux";
 import { SwitchHeaderByPage } from "../redux/PageHeaderReducer";
 import DashboardCardGoup from "../components/cards/cardGroup";
@@ -35,11 +36,20 @@ const RegisterMachine: React.FunctionComponent<RegisterMachineProps> = () => {
               type="string"
               placeholder="Enter machine Exact zone here"
             />
-            <Input
-              label="Operator"
-              type="string"
-              placeholder="Enter machine controlling Operator"
-            />
+            <div className="flex flex-col">
+              <label className="desktop:text-base md:text-base xs:text-xs font-medium text-gray-600">
+                Operator
+              </label>
+              <select
+                placeholder="select machine controlling Operator"
+                className="border bg-transparent border-lime-800 text-gray-700 desktop:text-sm md:text-sm xs:text-xs rounded w-full mt-2 desktop:p-3 md:p-3 xs:p-2 outline-none"
+              >
+                <option>Select machine controlling Operator</option>
+                {dammyContibutors.map((contributor) => (
+                  <option className="bg-white">{contributor.firstname}</option>
+                ))}
+              </select>
+            </div>
             <Input
               label="GPS longitude cordinates"
               type="string"
