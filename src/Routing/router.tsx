@@ -7,19 +7,24 @@ import ContainersInfo from "../pages/containerInfo";
 import RewardsInfo from "../pages/RewardsInfo";
 import Contributors from "../pages/Contributors";
 import Operators from "../pages/Operator";
+import LoginPage from "../pages/loginPage";
+
 interface AppRoutersProps {}
 
 const AppRouters: React.FunctionComponent<AppRoutersProps> = () => {
   return (
-      <Routes>
-        <Route path="/" element={<DashboardPage />} />
-        <Route path="/dashboard/new-machine" element={<RegisterMachine  />} />
-        <Route path="/dashboard/machines" element={<AvailableMachine  />} />
-        <Route path="/dashboard/containers" element={<ContainersInfo  />} />
-        <Route path="/dashboard/rewards" element={<RewardsInfo  />} />
-        <Route path="/dashboard/contributors" element={<Contributors   />} />
-        <Route path="/dashboard/operators" element={<Operators  />} />
-      </Routes>
+    <Routes>
+      <Route path="/" element={<LoginPage />} />
+      <Route path="/dashboard">
+        <Route index element={<DashboardPage />} />
+        <Route path="new-machine" element={<RegisterMachine />} />
+        <Route path="machines" element={<AvailableMachine />} />
+        <Route path="containers" element={<ContainersInfo />} />
+        <Route path="rewards" element={<RewardsInfo />} />
+        <Route path="contributors" element={<Contributors />} />
+        <Route path="operators" element={<Operators />} />
+      </Route>
+    </Routes>
   );
 };
 

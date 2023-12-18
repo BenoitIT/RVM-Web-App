@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import ContainerInfoChart from "../components/chats/ContainersStats";
 import { useDispatch } from "react-redux";
 import { SwitchHeaderByPage } from "../redux/PageHeaderReducer";
+import DashboardLayout from "../components/DashboardLayout";
 import DashboardCardGoup from "../components/cards/cardGroup";
 interface ContainersInfoProps {}
 
@@ -11,6 +12,7 @@ const ContainersInfo: React.FunctionComponent<ContainersInfoProps> = () => {
     dispatch(SwitchHeaderByPage("Containers' Fill levels"));
   }, []);
   return (
+    <DashboardLayout>
     <div className="pr-[4vw] pl-[2vw] py-[4vh] h-screen overflow-scroll">
       <DashboardCardGoup />
       <div className="desktop:mt-4 md:mt-[10vh] w-full ">
@@ -30,6 +32,7 @@ const ContainersInfo: React.FunctionComponent<ContainersInfoProps> = () => {
         </div>
       </div>
     </div>
+    </DashboardLayout>
   );
 };
 

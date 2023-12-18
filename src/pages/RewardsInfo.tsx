@@ -5,6 +5,7 @@ import SearchBox from "../components/inputs/SearchInput";
 import Paginator from "../components/pagination/Paginator";
 import { useDispatch } from "react-redux";
 import { SwitchHeaderByPage } from "../redux/PageHeaderReducer";
+import DashboardLayout from "../components/DashboardLayout";
 interface RewardsInfoProps {}
 
 const RewardsInfo: React.FunctionComponent<RewardsInfoProps> = () => {
@@ -13,6 +14,7 @@ const RewardsInfo: React.FunctionComponent<RewardsInfoProps> = () => {
     dispatch(SwitchHeaderByPage("Rewards Information"));
   }, []);
   return (
+    <DashboardLayout >
     <div className="pr-[4vw] pl-[2vw] py-[6vh] h-screen overflow-scroll">
       <div className=" desktop:flex justify-end  py-[2vh] xs:block w-full">
         <SearchBox />
@@ -58,6 +60,7 @@ const RewardsInfo: React.FunctionComponent<RewardsInfoProps> = () => {
         <Paginator />
       </div>
     </div>
+    </DashboardLayout>
   );
 };
 
