@@ -4,6 +4,7 @@ import dammyData from "../assets/DamyMachine";
 import TableRow from "../components/tables/MachineRow";
 import Paginator from "../components/pagination/Paginator";
 import { SwitchHeaderByPage } from "../redux/PageHeaderReducer";
+import DashboardLayout from "../components/DashboardLayout";
 interface AvailableMachineProps {}
 
 const AvailableMachine: React.FunctionComponent<AvailableMachineProps> = () => {
@@ -12,6 +13,7 @@ const AvailableMachine: React.FunctionComponent<AvailableMachineProps> = () => {
     dispatch(SwitchHeaderByPage("Available Machines"));
   }, []);
   return (
+    <DashboardLayout>
     <div className="pr-[4vw] pl-[2vw] py-[6vh] h-screen overflow-scroll">
       <div className="relative overflow-x-auto shadow-md sm:rounded">
         <table className="w-full desktop:text-sm xs:text-xs text-left">
@@ -54,6 +56,7 @@ const AvailableMachine: React.FunctionComponent<AvailableMachineProps> = () => {
         <Paginator />
       </div>
     </div>
+    </DashboardLayout>
   );
 };
 

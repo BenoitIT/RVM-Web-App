@@ -1,23 +1,26 @@
 import React from "react";
 import Input from "../inputs/inputField";
+import { Modal } from "antd";
 import Button from "../buttons/Button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
 interface NewOperatorProps {
   button:string;
+  display?:boolean|any;
    title:string;
     onModalDisplay:()=>void;
 }
 
-const NewOperator: React.FC<NewOperatorProps> = ({ onModalDisplay,title,button}:NewOperatorProps) => {
+const NewOperator: React.FC<NewOperatorProps> = ({ onModalDisplay,title,button,display}:NewOperatorProps) => {
   return (
-    <div className="bg-white py-[5vh] px-[4vw] shadow-md rounded shadow-gray-400">
-      <div className="text-center text-gray-900 text-xl uppercase font-semibold pb-6 relative">
-      {title}
-        <span className="absolute right-2 bg-white p-2 py-0 hover:bg-red-300 hover:text-white rounded-full hover:cursor-pointer" onClick={onModalDisplay}>
-          <FontAwesomeIcon icon={faXmark} />
-        </span>
-      </div>
+    <Modal
+     title={title}
+        open={display}
+        footer={null}
+        onCancel={onModalDisplay}
+        style={{ paddingBottom: 0 }}
+        width={900}
+        centered
+     >
+    <div className="bg-white py-[5vh] px-[4vw]">
       <div className="px-[4vw] grid grid-cols-2 gap-6 mt-[4vh]">
         <Input
           label="first name"
@@ -44,6 +47,7 @@ const NewOperator: React.FC<NewOperatorProps> = ({ onModalDisplay,title,button}:
         </div>
       </div>
     </div>
+    </Modal>
   );
 };
 export default NewOperator;

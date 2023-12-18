@@ -5,6 +5,7 @@ import SearchBox from "../components/inputs/SearchInput";
 import Paginator from "../components/pagination/Paginator";
 import { useDispatch } from "react-redux";
 import { SwitchHeaderByPage } from "../redux/PageHeaderReducer";
+import DashboardLayout from "../components/DashboardLayout";
 interface ContributorsProps {}
 
 const Contributors: React.FunctionComponent<ContributorsProps> = () => {
@@ -13,6 +14,7 @@ const Contributors: React.FunctionComponent<ContributorsProps> = () => {
     dispatch(SwitchHeaderByPage("Contributors"));
   }, []);
   return (
+    <DashboardLayout>
     <div className="pr-[4vw] pl-[2vw] py-[6vh] h-screen overflow-scroll">
       <div className="desktop:flex justify-end py-[2vh] xs:block">
         <SearchBox />
@@ -58,6 +60,7 @@ const Contributors: React.FunctionComponent<ContributorsProps> = () => {
         <Paginator />
       </div>
     </div>
+    </DashboardLayout>
   );
 };
 

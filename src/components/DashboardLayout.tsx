@@ -11,10 +11,6 @@ const DashboardLayout = ({ children }: any) => {
   const showNavBar = useSelector(
     (state: RootState): Boolean => state.showNav.showNav
   );
-  const modal = useSelector(
-    (state: RootState): Boolean => state.showModal.showModal
-  );
-  const updateInfomodal=useSelector((state:RootState):Boolean=>state.showModal.showUpdateModal);
   const dispatch = useDispatch();
 
   const hideSideBar = () => {
@@ -22,11 +18,6 @@ const DashboardLayout = ({ children }: any) => {
   };
   return (
     <>
-      <div
-        className={
-          modal ||updateInfomodal ? "bg-black opacity-60 w-full h-full absolute z-20" : "hidden"
-        }
-      ></div>
       <div className="w-screen flex flex-row min-h-screen  bg-white">
         <div
           className={`bg-lime-700 desktop:w-[20vw] min-h-screen xs:w-full md:w-full ${

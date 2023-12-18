@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import GeneralChart from "../components/chats/GeneralStatics";
 import PieChart from "../components/chats/StasticalPieChart";
 import Button from "../components/buttons/Button";
+import DashboardLayout from "../components/DashboardLayout";
 import { SwitchHeaderByPage } from "../redux/PageHeaderReducer";
 import DashboardCardGoup from "../components/cards/cardGroup";
 const Dashboard = () => {
@@ -11,6 +12,7 @@ const Dashboard = () => {
     dispatch(SwitchHeaderByPage("Dashboard Overview"));
   }, []);
   return (
+    <DashboardLayout >
     <div className="pr-[4vw] pl-[2vw] py-[4vh] h-screen overflow-scroll">
       <DashboardCardGoup/>
       <div className="mt-4 w-full flex desktop:flex-row md:flex-col xs:flex-col">
@@ -36,6 +38,7 @@ const Dashboard = () => {
         />
       </div>
     </div>
+    </DashboardLayout>
   );
 };
 

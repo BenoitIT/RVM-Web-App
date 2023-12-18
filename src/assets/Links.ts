@@ -16,7 +16,7 @@ const Menus: LinkType[] = [
     icon: faColumns,
     component: null,
     nestedLink: null,
-    path: "/",
+    path: "/dashboard",
   },
   {
     id: 6,

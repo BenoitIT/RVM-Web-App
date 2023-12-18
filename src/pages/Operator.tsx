@@ -7,6 +7,7 @@ import MutateOperator from "../components/forms/NewOperator";
 import { useDispatch,useSelector } from "react-redux";
 import { SwitchHeaderByPage } from "../redux/PageHeaderReducer";
 import { RootState } from "../redux/store";
+import DashboardLayout from "../components/DashboardLayout";
 import { modalPopUpDisplay,showDataUpdateModal } from "../redux/displayModal";
 interface OperatorsProps {}
 
@@ -26,6 +27,7 @@ const Operators: React.FunctionComponent<OperatorsProps> = () => {
   };
 
   return (
+    <DashboardLayout>
     <div className="pr-[4vw] pl-[2vw] py-[6vh] h-screen overflow-scroll">
       <div className=" flex desktop:flex-row justify-between py-[2vh] xs:flex-col xs:gap-3">
         <button
@@ -38,10 +40,10 @@ const Operators: React.FunctionComponent<OperatorsProps> = () => {
       </div>
       <div className="relative overflow-x-auto shadow-md sm:rounded">
         <div className={AddNewmodal? "absolute left-[10vw] top-[10vh] z-40" : "hidden"}>
-          <MutateOperator onModalDisplay={handleModalDisplay}  title="Register new RVM operator" button="register"/>
+          <MutateOperator onModalDisplay={handleModalDisplay}  title="Register new RVM operator" button="register" display={AddNewmodal} />
         </div>
         <div className={updateInfomodal? "absolute left-[10vw] top-[10vh] z-40" : "hidden"}>
-          <MutateOperator onModalDisplay={handleModalDisplay}  title="Update RVM operator Info." button="update info"/>
+          <MutateOperator onModalDisplay={handleModalDisplay}  title="Update RVM operator Info." button="update info" />
         </div>
         <table className="w-full dektop:text-sm xs:text-xs text-left">
           <thead className="text-xs text-white uppercase bg-lime-800">
@@ -83,6 +85,7 @@ const Operators: React.FunctionComponent<OperatorsProps> = () => {
         <Paginator />
       </div>
     </div>
+    </DashboardLayout>
   );
 };
 

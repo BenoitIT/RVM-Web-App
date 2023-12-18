@@ -7,8 +7,8 @@ import Menus from "../../assets/Links";
 import { SwitchSideBarDisplay } from "../../redux/NavBarDisplay";
 
 const SideBar = () => {
-  const [activeMenu, setActiveMenu] = useState(0);
-  const [AcitveSubMenu, setActiveSubMenu] = useState(0);
+  const [activeMenu, setActiveMenu] = useState<number>(0);
+  const [AcitveSubMenu, setActiveSubMenu] = useState<number>(0);
   const dispatch = useDispatch();
   const handleSelectedMenu = (index: number) => {
     setActiveMenu(index);
@@ -52,7 +52,7 @@ const SideBar = () => {
                 }`}
               >
                 <Link to={menu.path} className="text-white hover:text-gray-300">
-                  <div>{menu.title}</div>
+                  <div onClick={() => handleSelectedMenu(index)}>{menu.title}</div>
                 </Link>
                 {activeMenu === index && menu.nestedLink && (
                   <div
